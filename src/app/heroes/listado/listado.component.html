@@ -1,0 +1,24 @@
+<p>Listado de Héroes</p>
+
+<div *ngIf="heroeBorrado; else noBorrado">
+    <h3>heroe borrado: <small>{{heroeBorrado}}</small> </h3> <!-- <small> hace el tamaño del texto una talla más pequeña 
+                                                                (por ejemplo, de largo a mediano, o de pequeño a extra pequeño)  
+                                                              que el tamaño mínimo de fuente del navegador-->  
+</div>
+
+<ng-template #noBorrado>    <!--ng-template es un componente propio de de angular que muestra un contenido
+                    en este caso en base a una condicion-->
+    <h3>No ha borrado nada</h3>
+</ng-template>
+
+<button (click)='borrarHeroe()'>Borrar</button>
+
+<ul>  <!-- <ul> y </ul> "unordered list" -lista no ordenada . crea una lista no ordenada-->
+    <li *ngFor="let heroe of heores; let i=index"> {{i+1}}-{{heroe}} <!--El elemento li del ingles item list 
+                                                                      o elemento de lista declara cada uno de
+                                                                       los elementos de una lista.-->
+
+    </li>
+
+</ul>
+
